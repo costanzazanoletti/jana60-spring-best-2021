@@ -28,7 +28,11 @@ public class MainController {
 
   /* metodo per le songs */
   @GetMapping("/songs")
-  public String songs() {
+  public String songs(Model model) {
+    List<String> songList = List.of("2010 — Earl Sweatshirt", "Keep An Eye on Dan — ABBA",
+        "Like I Used To — Sharon Van Etten & Angel Olsen");
+    model.addAttribute("songList", songList);
+
     return "songs";
   }
 }
